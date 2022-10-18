@@ -41,7 +41,7 @@
 }
 
 - (void)pinViewToSafeAreaEdges:(UIView*)view  {    
-    UIEdgeInsets safeAreaInsets = UIApplication.sharedApplication.keyWindow.ykf_safeAreaInsets;
+    UIEdgeInsets safeAreaInsets = [[ykf_safeAreaInsets alloc] ykf_safeAreaInsets];    
     [self pinViewToEdges:view insets:safeAreaInsets];
 }
 

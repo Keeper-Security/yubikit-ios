@@ -73,7 +73,7 @@
     
     [self addSubview: self.dismissButton];
     
-    UIEdgeInsets safeAreaInsets = UIApplication.sharedApplication.keyWindow.ykf_safeAreaInsets;
+    UIEdgeInsets safeAreaInsets = [[ykf_safeAreaInsets alloc] ykf_safeAreaInsets];
     
     NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.dismissButton attribute:NSLayoutAttributeWidth
                                                              relatedBy:NSLayoutRelationEqual toItem:nil
@@ -93,7 +93,7 @@
 }
 
 - (void)setupScanHintLabel {
-    UIEdgeInsets safeAreaInsets = UIApplication.sharedApplication.keyWindow.ykf_safeAreaInsets;
+    UIEdgeInsets safeAreaInsets = [[ykf_safeAreaInsets alloc] ykf_safeAreaInsets];
     
     UIView *hintBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];
     hintBackgroundView.translatesAutoresizingMaskIntoConstraints = NO;

@@ -14,12 +14,17 @@
 
 #import "UIWindowAdditions.h"
 
-@implementation UIWindow(YKFSafeReagion)
+@implementation ykf_safeAreaInsets
 
 - (UIEdgeInsets)ykf_safeAreaInsets {
-    if (@available(iOS 11, *)) {
-        UIWindow *window = UIApplication.sharedApplication.keyWindow;
-        return window.safeAreaInsets;
+    if (@available(iOS 13, *)) {
+        
+        NSSet *windows = UIApplication.sharedApplication.connectedScenes;
+        for (UIWindow* window in windows) {
+            if (window.windowScene.activationState == UISceneActivationStateForegroundActive) {
+                return window.safeAreaInsets;
+            }
+        }
     }
     return UIEdgeInsetsZero;
 }

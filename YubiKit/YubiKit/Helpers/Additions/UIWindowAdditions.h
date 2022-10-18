@@ -16,7 +16,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIWindow(YKFSafeReagion)
+@interface ykf_safeAreaInsets : NSObject
 
 @property (nonatomic, readonly) UIEdgeInsets ykf_safeAreaInsets;
 
